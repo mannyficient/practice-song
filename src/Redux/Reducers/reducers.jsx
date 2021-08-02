@@ -10,7 +10,7 @@ const songListReducer = () => {
 };
 
 const songSelectReducer = (selectedSong = null, action) => {
-  switch (action) {
+  switch (action.type) {
     case "SONG_SELECTED":
       return action.payload;
 
@@ -20,6 +20,6 @@ const songSelectReducer = (selectedSong = null, action) => {
 };
 
 export const rootReducers = combineReducers({
-  song: songListReducer,
+  songs: songListReducer,
   selectedSong: songSelectReducer,
 });
